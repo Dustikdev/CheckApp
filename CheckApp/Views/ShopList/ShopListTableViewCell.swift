@@ -9,7 +9,11 @@ import UIKit
 
 class ShopListTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var checkCell: UILabel!
+    @IBOutlet weak var purchaseCategoryLabel: UILabel!
+    @IBOutlet weak var shopNameLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var costLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

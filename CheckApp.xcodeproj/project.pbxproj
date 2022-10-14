@@ -18,6 +18,9 @@
 		794BBFAD28F960310048FA0B /* CheckList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFAC28F960310048FA0B /* CheckList.storyboard */; };
 		794BBFB028F961EB0048FA0B /* CheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFAE28F961EB0048FA0B /* CheckListTableViewCell.swift */; };
 		794BBFB128F961EB0048FA0B /* CheckListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFAF28F961EB0048FA0B /* CheckListTableViewCell.xib */; };
+		794BBFB428F9B6D00048FA0B /* InputDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFB328F9B6D00048FA0B /* InputDataViewController.swift */; };
+		794BBFB628F9B6E80048FA0B /* InputData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFB528F9B6E80048FA0B /* InputData.storyboard */; };
+		794BBFB928F9BAB40048FA0B /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFB828F9BAB40048FA0B /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		794BBFAC28F960310048FA0B /* CheckList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckList.storyboard; sourceTree = "<group>"; };
 		794BBFAE28F961EB0048FA0B /* CheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListTableViewCell.swift; sourceTree = "<group>"; };
 		794BBFAF28F961EB0048FA0B /* CheckListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListTableViewCell.xib; sourceTree = "<group>"; };
+		794BBFB328F9B6D00048FA0B /* InputDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDataViewController.swift; sourceTree = "<group>"; };
+		794BBFB528F9B6E80048FA0B /* InputData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputData.storyboard; sourceTree = "<group>"; };
+		794BBFB828F9BAB40048FA0B /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				794BBF8D28F70FD10048FA0B /* AppDelegate.swift */,
+				794BBFB728F9BA9D0048FA0B /* Model */,
 				794BBFA928F95FCD0048FA0B /* Views */,
 				794BBF9628F70FD20048FA0B /* Assets.xcassets */,
 				794BBF9828F70FD20048FA0B /* LaunchScreen.storyboard */,
@@ -78,6 +85,7 @@
 		794BBFA928F95FCD0048FA0B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				794BBFB228F9B64E0048FA0B /* InputData */,
 				794BBFAB28F960070048FA0B /* CheckList */,
 				794BBFAA28F95FFD0048FA0B /* ShopList */,
 			);
@@ -104,6 +112,23 @@
 				794BBFAF28F961EB0048FA0B /* CheckListTableViewCell.xib */,
 			);
 			path = CheckList;
+			sourceTree = "<group>";
+		};
+		794BBFB228F9B64E0048FA0B /* InputData */ = {
+			isa = PBXGroup;
+			children = (
+				794BBFB328F9B6D00048FA0B /* InputDataViewController.swift */,
+				794BBFB528F9B6E80048FA0B /* InputData.storyboard */,
+			);
+			path = InputData;
+			sourceTree = "<group>";
+		};
+		794BBFB728F9BA9D0048FA0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				794BBFB828F9BAB40048FA0B /* UserData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +194,7 @@
 				794BBF9728F70FD20048FA0B /* Assets.xcassets in Resources */,
 				794BBFA228F711670048FA0B /* ShopList.storyboard in Resources */,
 				794BBFB128F961EB0048FA0B /* CheckListTableViewCell.xib in Resources */,
+				794BBFB628F9B6E80048FA0B /* InputData.storyboard in Resources */,
 				794BBFAD28F960310048FA0B /* CheckList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,9 +208,11 @@
 			files = (
 				794BBFA528F85EB00048FA0B /* ShopListTableViewCell.swift in Sources */,
 				794BBFB028F961EB0048FA0B /* CheckListTableViewCell.swift in Sources */,
+				794BBFB928F9BAB40048FA0B /* UserData.swift in Sources */,
 				794BBFA828F95FB00048FA0B /* CheckListViewController.swift in Sources */,
 				794BBF9228F70FD10048FA0B /* ShopListViewController.swift in Sources */,
 				794BBF8E28F70FD10048FA0B /* AppDelegate.swift in Sources */,
+				794BBFB428F9B6D00048FA0B /* InputDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

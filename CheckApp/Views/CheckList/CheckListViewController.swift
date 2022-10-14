@@ -16,11 +16,13 @@ class CheckListViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let cellNib = UINib(nibName: String(describing: ShopListTableViewCell.self), bundle: nil)
+        let cellNib = UINib(nibName: String(describing: CheckListTableViewCell.self), bundle: nil)
         checkListTableView.register(cellNib, forCellReuseIdentifier: "CheckListCell")
         
         checkListTableView.delegate = self
         checkListTableView.dataSource = self
+//        self.navigationController?.navigationBar.prefersLargeTitles = true
+//        title = "fsfsdfsdf"
         
     }
 
@@ -45,3 +47,5 @@ class CheckListViewController: UIViewController, UITableViewDelegate, UITableVie
     
 
 }
+
+
