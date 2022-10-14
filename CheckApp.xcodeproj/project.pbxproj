@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		794BBF8E28F70FD10048FA0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBF8D28F70FD10048FA0B /* AppDelegate.swift */; };
-		794BBF9228F70FD10048FA0B /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBF9128F70FD10048FA0B /* CheckListViewController.swift */; };
+		794BBF9228F70FD10048FA0B /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBF9128F70FD10048FA0B /* ShopListViewController.swift */; };
 		794BBF9728F70FD20048FA0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 794BBF9628F70FD20048FA0B /* Assets.xcassets */; };
 		794BBF9A28F70FD20048FA0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BBF9828F70FD20048FA0B /* LaunchScreen.storyboard */; };
-		794BBFA228F711670048FA0B /* CheckList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFA128F711670048FA0B /* CheckList.storyboard */; };
+		794BBFA228F711670048FA0B /* ShopList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFA128F711670048FA0B /* ShopList.storyboard */; };
+		794BBFA528F85EB00048FA0B /* ShopListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFA328F85EB00048FA0B /* ShopListTableViewCell.swift */; };
+		794BBFA628F85EB00048FA0B /* ShopListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFA428F85EB00048FA0B /* ShopListTableViewCell.xib */; };
+		794BBFA828F95FB00048FA0B /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFA728F95FB00048FA0B /* CheckListViewController.swift */; };
+		794BBFAD28F960310048FA0B /* CheckList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFAC28F960310048FA0B /* CheckList.storyboard */; };
+		794BBFB028F961EB0048FA0B /* CheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFAE28F961EB0048FA0B /* CheckListTableViewCell.swift */; };
+		794BBFB128F961EB0048FA0B /* CheckListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFAF28F961EB0048FA0B /* CheckListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		794BBF8A28F70FD10048FA0B /* CheckApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		794BBF8D28F70FD10048FA0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		794BBF9128F70FD10048FA0B /* CheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
+		794BBF9128F70FD10048FA0B /* ShopListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewController.swift; sourceTree = "<group>"; };
 		794BBF9628F70FD20048FA0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		794BBF9928F70FD20048FA0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		794BBF9B28F70FD20048FA0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		794BBFA128F711670048FA0B /* CheckList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckList.storyboard; sourceTree = "<group>"; };
+		794BBFA128F711670048FA0B /* ShopList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShopList.storyboard; sourceTree = "<group>"; };
+		794BBFA328F85EB00048FA0B /* ShopListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListTableViewCell.swift; sourceTree = "<group>"; };
+		794BBFA428F85EB00048FA0B /* ShopListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopListTableViewCell.xib; sourceTree = "<group>"; };
+		794BBFA728F95FB00048FA0B /* CheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
+		794BBFAC28F960310048FA0B /* CheckList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckList.storyboard; sourceTree = "<group>"; };
+		794BBFAE28F961EB0048FA0B /* CheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListTableViewCell.swift; sourceTree = "<group>"; };
+		794BBFAF28F961EB0048FA0B /* CheckListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +67,43 @@
 			isa = PBXGroup;
 			children = (
 				794BBF8D28F70FD10048FA0B /* AppDelegate.swift */,
-				794BBF9128F70FD10048FA0B /* CheckListViewController.swift */,
-				794BBFA128F711670048FA0B /* CheckList.storyboard */,
+				794BBFA928F95FCD0048FA0B /* Views */,
 				794BBF9628F70FD20048FA0B /* Assets.xcassets */,
 				794BBF9828F70FD20048FA0B /* LaunchScreen.storyboard */,
 				794BBF9B28F70FD20048FA0B /* Info.plist */,
 			);
 			path = CheckApp;
+			sourceTree = "<group>";
+		};
+		794BBFA928F95FCD0048FA0B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				794BBFAB28F960070048FA0B /* CheckList */,
+				794BBFAA28F95FFD0048FA0B /* ShopList */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		794BBFAA28F95FFD0048FA0B /* ShopList */ = {
+			isa = PBXGroup;
+			children = (
+				794BBF9128F70FD10048FA0B /* ShopListViewController.swift */,
+				794BBFA128F711670048FA0B /* ShopList.storyboard */,
+				794BBFA328F85EB00048FA0B /* ShopListTableViewCell.swift */,
+				794BBFA428F85EB00048FA0B /* ShopListTableViewCell.xib */,
+			);
+			path = ShopList;
+			sourceTree = "<group>";
+		};
+		794BBFAB28F960070048FA0B /* CheckList */ = {
+			isa = PBXGroup;
+			children = (
+				794BBFA728F95FB00048FA0B /* CheckListViewController.swift */,
+				794BBFAC28F960310048FA0B /* CheckList.storyboard */,
+				794BBFAE28F961EB0048FA0B /* CheckListTableViewCell.swift */,
+				794BBFAF28F961EB0048FA0B /* CheckListTableViewCell.xib */,
+			);
+			path = CheckList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +165,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				794BBF9A28F70FD20048FA0B /* LaunchScreen.storyboard in Resources */,
+				794BBFA628F85EB00048FA0B /* ShopListTableViewCell.xib in Resources */,
 				794BBF9728F70FD20048FA0B /* Assets.xcassets in Resources */,
-				794BBFA228F711670048FA0B /* CheckList.storyboard in Resources */,
+				794BBFA228F711670048FA0B /* ShopList.storyboard in Resources */,
+				794BBFB128F961EB0048FA0B /* CheckListTableViewCell.xib in Resources */,
+				794BBFAD28F960310048FA0B /* CheckList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				794BBF9228F70FD10048FA0B /* CheckListViewController.swift in Sources */,
+				794BBFA528F85EB00048FA0B /* ShopListTableViewCell.swift in Sources */,
+				794BBFB028F961EB0048FA0B /* CheckListTableViewCell.swift in Sources */,
+				794BBFA828F95FB00048FA0B /* CheckListViewController.swift in Sources */,
+				794BBF9228F70FD10048FA0B /* ShopListViewController.swift in Sources */,
 				794BBF8E28F70FD10048FA0B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,7 +328,7 @@
 				INFOPLIST_FILE = CheckApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = CheckList;
+				INFOPLIST_KEY_UIMainStoryboardFile = ShopList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,7 +355,7 @@
 				INFOPLIST_FILE = CheckApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = CheckList;
+				INFOPLIST_KEY_UIMainStoryboardFile = ShopList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
