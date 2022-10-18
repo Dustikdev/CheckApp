@@ -23,7 +23,8 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
         shopListTableView.register(cellNib, forCellReuseIdentifier: "ShopCell")
         shopListTableView.delegate = self
         shopListTableView.dataSource = self
-        getDataFromURL()
+//        getDataFromURL()
+        convertDataFromURL()
         
     }
     
@@ -86,14 +87,39 @@ extension ShopListViewController {
             (data, response, error) in
             guard let data = data else { return }
             print(String(data: data, encoding: .utf8)!)
-            let tempHTML = String(data: data, encoding: .utf8)!
+//            let tempHTML = String(data: data, encoding: .utf8)!
+//            convert(text: tempHTML)
         }
         task.resume()
-        
-         
-     
-        
     }
+    
+        //полученную хтмлку суем в массив, разбиваем его на строки
+    func convertDataFromURL() {
+        let fullName = mockData
+        let dirtyList = fullName.split(separator: "\n").map { String($0).trimmingCharacters(in: .whitespacesAndNewlines) }
+//        print(dirtyList)
+        let cleanupList = cleanupData(list: dirtyList)
+        let numberOfPurchase = getNumberOfPurchase(list: cleanupList)
+//        print(cleanupList)
+//        print(numberOfPurchase)
+    }
+    
+        //забираем из массива нужные строки
+    func cleanupData(list: [String]) -> [String] {
+        let firstIndex = list.firstIndex(where: { $0.contains("panel-collapse collapse")})
+        let lastIndex = list.lastIndex(where: { $0.contains("Готовина")})
+        let cleanData = Array(list[firstIndex!...lastIndex!])
+        return cleanData
+    }
+    
+        //считем количество позиций в чеке
+    func getNumberOfPurchase(list: [String]) -> Int {
+        let firstIndex = list.firstIndex(where: { $0.contains("Назив")})
+        let lastIndex = list.lastIndex(where: { $0.contains("----------------------------------------")})
+        return Int((lastIndex! - firstIndex!)/2)
+    }
+    
+    
 }
 
 

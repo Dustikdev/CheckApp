@@ -21,6 +21,7 @@
 		794BBFB428F9B6D00048FA0B /* InputDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFB328F9B6D00048FA0B /* InputDataViewController.swift */; };
 		794BBFB628F9B6E80048FA0B /* InputData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFB528F9B6E80048FA0B /* InputData.storyboard */; };
 		794BBFB928F9BAB40048FA0B /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFB828F9BAB40048FA0B /* UserData.swift */; };
+		794BBFBB28FEF0D70048FA0B /* URLData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFBA28FEF0D70048FA0B /* URLData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		794BBFB328F9B6D00048FA0B /* InputDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDataViewController.swift; sourceTree = "<group>"; };
 		794BBFB528F9B6E80048FA0B /* InputData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputData.storyboard; sourceTree = "<group>"; };
 		794BBFB828F9BAB40048FA0B /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		794BBFBA28FEF0D70048FA0B /* URLData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				794BBFB828F9BAB40048FA0B /* UserData.swift */,
+				794BBFBA28FEF0D70048FA0B /* URLData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				794BBFB928F9BAB40048FA0B /* UserData.swift in Sources */,
 				794BBFA828F95FB00048FA0B /* CheckListViewController.swift in Sources */,
 				794BBF9228F70FD10048FA0B /* ShopListViewController.swift in Sources */,
+				794BBFBB28FEF0D70048FA0B /* URLData.swift in Sources */,
 				794BBF8E28F70FD10048FA0B /* AppDelegate.swift in Sources */,
 				794BBFB428F9B6D00048FA0B /* InputDataViewController.swift in Sources */,
 			);
