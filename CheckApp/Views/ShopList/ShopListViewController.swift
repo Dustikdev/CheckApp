@@ -12,20 +12,20 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var shopListTableView: UITableView!
     
     let shops: [String] = ["Пятерочка", "Лента", "Самбери", "Ашан", "У Вазгена"]
-    var userDataFromCheck = UserData(purchaseDate: "21/01/22", purchaseCost: "3422rsd", shopName: "Maxi", comment: "no comment")
-
+    //    var userDataFromCheck = UserData(purchaseCategory: "Meat", purchaseCost: "3422rsd", shopName: "Maxi", comment: "no comment")
+    var purchaseData = ShopVCData(shopAdress: nil, shopName: nil, purchaseCategory: nil, comment: nil, purchaseVCData: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
-//        title = "List of shops"
-//        self.navigationController?.navigationBar.prefersLargeTitles = true
+        convertDataFromURL()
+        //        title = "List of shops"
+        //        self.navigationController?.navigationBar.prefersLargeTitles = true
         let cellNib = UINib(nibName: String(describing: ShopListTableViewCell.self), bundle: nil)
         shopListTableView.register(cellNib, forCellReuseIdentifier: "ShopCell")
         shopListTableView.delegate = self
         shopListTableView.dataSource = self
-//        getDataFromURL()
-        convertDataFromURL()
-        
+        //        getDataFromURL()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,26 +35,24 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShopCell") as! ShopListTableViewCell
-//        cell.purchaseCategoryLabel.text = shops[indexPath.row]
-        cell.purchaseCategoryLabel.text = userDataFromCheck.shopName
-        cell.commentLabel.text = userDataFromCheck.comment
-        cell.costLabel.text = userDataFromCheck.purchaseCost
-        cell.shopNameLabel.text = userDataFromCheck.shopName
+        //        cell.purchaseCategoryLabel.text = shops[indexPath.row]
+        //        cell.purchaseCategoryLabel.text = userDataFromCheck.purchaseCategory
+        //        cell.commentLabel.text = userDataFromCheck.comment
+        //        cell.costLabel.text = userDataFromCheck.purchaseCost
+        //        cell.shopNameLabel.text = userDataFromCheck.shopName
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("You tapped cell number \(indexPath.row).")
+        //        print("You tapped cell number \(indexPath.row).")
         let checkSB = UIStoryboard(name: "CheckList", bundle: nil)
         let vc = checkSB.instantiateViewController(withIdentifier: "CheckListVC")
         navigationController?.pushViewController(vc, animated: true)
-       
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection
-                                section: Int) -> String? {
-       return "Header \(section)"
+                   section: Int) -> String? {
+        return "Header \(section)"
     }
 }
 
@@ -87,24 +85,27 @@ extension ShopListViewController {
             (data, response, error) in
             guard let data = data else { return }
             print(String(data: data, encoding: .utf8)!)
-//            let tempHTML = String(data: data, encoding: .utf8)!
-//            convert(text: tempHTML)
+            //            let tempHTML = String(data: data, encoding: .utf8)!
+            //            convert(text: tempHTML)
         }
         task.resume()
     }
     
-        //полученную хтмлку суем в массив, разбиваем его на строки
+    //полученную хтмлку суем в массив, разбиваем его на строки
     func convertDataFromURL() {
         let fullName = mockData
         let dirtyList = fullName.split(separator: "\n").map { String($0).trimmingCharacters(in: .whitespacesAndNewlines) }
-//        print(dirtyList)
+        //        print(dirtyList)
         let cleanupList = cleanupData(list: dirtyList)
         let numberOfPurchase = getNumberOfPurchase(list: cleanupList)
-//        print(cleanupList)
-//        print(numberOfPurchase)
+        let splittedCostData = splitCostData(list: cleanupList, index: numberOfPurchase)
+        
+        //        print(cleanupList)
+        //        print(numberOfPurchase)
+        //        print(splittedCostData)
     }
     
-        //забираем из массива нужные строки
+    //забираем из массива нужные строки
     func cleanupData(list: [String]) -> [String] {
         let firstIndex = list.firstIndex(where: { $0.contains("panel-collapse collapse")})
         let lastIndex = list.lastIndex(where: { $0.contains("Готовина")})
@@ -112,14 +113,38 @@ extension ShopListViewController {
         return cleanData
     }
     
-        //считем количество позиций в чеке
+    //считаем количество позиций в чеке
     func getNumberOfPurchase(list: [String]) -> Int {
         let firstIndex = list.firstIndex(where: { $0.contains("Назив")})
         let lastIndex = list.lastIndex(where: { $0.contains("----------------------------------------")})
         return Int((lastIndex! - firstIndex!)/2)
     }
     
+    //делим строку после названия на цену, количество, сумму и засовываем в массив
+    func splitCostData(list: [String], index: Int) -> [String] {
+        var i = 0
+        var splittedData = [String]()
+        while i < (index * 2) {
+            let splittedValues = list[(15 + i)].split(separator: " ").map { String($0) }
+            splittedData.append(contentsOf: splittedValues)
+            i += 2
+            //            print(splittedData)
+        }
+        return splittedData
+    }
     
+    func fillingPurchaseData(cleanupList: [String],splittedCostData: [String], numberOfPurchase: Int) {
+        purchaseData.shopAdress = cleanupList[6]
+        purchaseData.shopName = cleanupList[5]
+        purchaseData.purchaseCategory = "no category"
+        purchaseData.comment = "no comment"
+        var i = 1
+        while i <= numberOfPurchase {
+            //хуйня не работает потому что убрал стринги, надо поставить обратно
+//            purchaseData.purchaseVCData?[i].purchaseCost = splittedCostData[i]
+        }
+//        purchaseData.purchaseVCData
+    }
 }
 
 
@@ -127,4 +152,4 @@ extension ShopListViewController {
 
 
 
-    
+
