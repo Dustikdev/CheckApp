@@ -13,8 +13,8 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     
     let shops: [String] = ["Пятерочка", "Лента", "Самбери", "Ашан", "У Вазгена"]
     //    var userDataFromCheck = UserData(purchaseCategory: "Meat", purchaseCost: "3422rsd", shopName: "Maxi", comment: "no comment")
-    var purchaseData = ShopVCData(shopAdress: nil, shopName: nil, purchaseCategory: nil, comment: nil, purchaseVCData: nil)
     
+    private let repository = RachunRepository()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
@@ -25,6 +25,20 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
         shopListTableView.register(cellNib, forCellReuseIdentifier: "ShopCell")
         shopListTableView.delegate = self
         shopListTableView.dataSource = self
+        repository.getRachuns(
+            url: "mock",
+            completion: { result in
+                switch result {
+                    
+                case let .success(shopVCData):
+//                    self.shop = shopVCData
+//                    tableView.reloadData()
+                    break
+                case let .failure(error):
+                    print(error.localizedDescription)
+                }
+            }
+        )
         //        getDataFromURL()
     }
     
@@ -97,9 +111,10 @@ extension ShopListViewController {
         let dirtyList = fullName.split(separator: "\n").map { String($0).trimmingCharacters(in: .whitespacesAndNewlines) }
         //        print(dirtyList)
         let cleanupList = cleanupData(list: dirtyList)
+//        print(cleanupList)
         let numberOfPurchase = getNumberOfPurchase(list: cleanupList)
         let splittedCostData = splitCostData(list: cleanupList, index: numberOfPurchase)
-        
+        fillingPurchaseData(cleanupList: cleanupList, splittedCostData: splittedCostData, numberOfPurchase: numberOfPurchase)
         //        print(cleanupList)
         //        print(numberOfPurchase)
         //        print(splittedCostData)
@@ -134,19 +149,35 @@ extension ShopListViewController {
     }
     
     func fillingPurchaseData(cleanupList: [String],splittedCostData: [String], numberOfPurchase: Int) {
+        var purchaseData = ShopVCData(shopAdress: nil, shopName: nil, purchaseCategory: nil, comment: nil, purchaseVCData: nil)
         purchaseData.shopAdress = cleanupList[6]
         purchaseData.shopName = cleanupList[5]
         purchaseData.purchaseCategory = "no category"
         purchaseData.comment = "no comment"
-        var i = 1
-        while i <= numberOfPurchase {
-            //хуйня не работает потому что убрал стринги, надо поставить обратно
-//            purchaseData.purchaseVCData?[i].purchaseCost = splittedCostData[i]
+        purchaseData.purchaseVCData?[0].purchaseName = cleanupList[14]
+        print(purchaseData.purchaseVCData?[0].purchaseName)
+        var i = 0
+        var j = 0
+        while i < numberOfPurchase {
+            purchaseData.purchaseVCData?[i].purchaseName = cleanupList[14+j]
+            purchaseData.purchaseVCData?[i].purchaseCost = Double(splittedCostData[i])
+            purchaseData.purchaseVCData?[i].purchaseCount = Int(splittedCostData[i+1])
+            purchaseData.purchaseVCData?[i].purchaseTotal = Double(splittedCostData[i+2])
+//            print(purchaseData.purchaseVCData?[i].purchaseName)
+//            print(purchaseData.purchaseVCData?[i].purchaseCost)
+//            print(purchaseData.purchaseVCData?[i].purchaseCount)
+//            print(purchaseData.purchaseVCData?[i].purchaseTotal)
+            i += 3
+            j += 2
         }
 //        purchaseData.purchaseVCData
     }
 }
 
+//var purchaseCost: Double?
+//var purchaseName: String?
+//var purchaseCount: Int?
+//var purchaseTotal: Double?
 
 
 

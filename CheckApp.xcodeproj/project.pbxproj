@@ -22,6 +22,9 @@
 		794BBFB628F9B6E80048FA0B /* InputData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFB528F9B6E80048FA0B /* InputData.storyboard */; };
 		794BBFB928F9BAB40048FA0B /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFB828F9BAB40048FA0B /* UserData.swift */; };
 		794BBFBB28FEF0D70048FA0B /* URLData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFBA28FEF0D70048FA0B /* URLData.swift */; };
+		794BBFBE2902C2240048FA0B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFBD2902C2240048FA0B /* NetworkManager.swift */; };
+		794BBFC02902C2B40048FA0B /* RawTextToCheckConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFBF2902C2B40048FA0B /* RawTextToCheckConverter.swift */; };
+		794BBFC32902C32B0048FA0B /* RachunRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFC22902C32B0048FA0B /* RachunRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		794BBFB528F9B6E80048FA0B /* InputData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputData.storyboard; sourceTree = "<group>"; };
 		794BBFB828F9BAB40048FA0B /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		794BBFBA28FEF0D70048FA0B /* URLData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLData.swift; sourceTree = "<group>"; };
+		794BBFBD2902C2240048FA0B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		794BBFBF2902C2B40048FA0B /* RawTextToCheckConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawTextToCheckConverter.swift; sourceTree = "<group>"; };
+		794BBFC22902C32B0048FA0B /* RachunRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RachunRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,8 @@
 		794BBF8C28F70FD10048FA0B /* CheckApp */ = {
 			isa = PBXGroup;
 			children = (
+				794BBFC12902C3140048FA0B /* Domain */,
+				794BBFBC2902C2130048FA0B /* Services */,
 				794BBF8D28F70FD10048FA0B /* AppDelegate.swift */,
 				794BBFB728F9BA9D0048FA0B /* Model */,
 				794BBFA928F95FCD0048FA0B /* Views */,
@@ -132,6 +140,23 @@
 				794BBFBA28FEF0D70048FA0B /* URLData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		794BBFBC2902C2130048FA0B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				794BBFBD2902C2240048FA0B /* NetworkManager.swift */,
+				794BBFBF2902C2B40048FA0B /* RawTextToCheckConverter.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		794BBFC12902C3140048FA0B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				794BBFC22902C32B0048FA0B /* RachunRepository.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,7 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				794BBFBE2902C2240048FA0B /* NetworkManager.swift in Sources */,
+				794BBFC32902C32B0048FA0B /* RachunRepository.swift in Sources */,
 				794BBFA528F85EB00048FA0B /* ShopListTableViewCell.swift in Sources */,
+				794BBFC02902C2B40048FA0B /* RawTextToCheckConverter.swift in Sources */,
 				794BBFB028F961EB0048FA0B /* CheckListTableViewCell.swift in Sources */,
 				794BBFB928F9BAB40048FA0B /* UserData.swift in Sources */,
 				794BBFA828F95FB00048FA0B /* CheckListViewController.swift in Sources */,
