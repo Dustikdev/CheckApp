@@ -13,6 +13,7 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     
     let shops: [String] = ["Пятерочка", "Лента", "Самбери", "Ашан", "У Вазгена"]
     //    var userDataFromCheck = UserData(purchaseCategory: "Meat", purchaseCost: "3422rsd", shopName: "Maxi", comment: "no comment")
+    let sdsdsd = Check()
     
     private let repository = RachunRepository()
     override func viewDidLoad() {
@@ -149,7 +150,7 @@ extension ShopListViewController {
     }
     
     func fillingPurchaseData(cleanupList: [String],splittedCostData: [String], numberOfPurchase: Int) {
-        var purchaseData = ShopVCData(shopAdress: nil, shopName: nil, purchaseCategory: nil, comment: nil, purchaseVCData: nil)
+        var purchaseData = Check(shopAdress: nil, shopName: nil, purchaseCategory: nil, comment: nil, purchaseVCData: nil)
         purchaseData.shopAdress = cleanupList[6]
         purchaseData.shopName = cleanupList[5]
         purchaseData.purchaseCategory = "no category"

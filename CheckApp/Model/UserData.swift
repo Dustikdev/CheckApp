@@ -7,34 +7,17 @@
 
 import Foundation
 
-struct ShopVCData {
+struct Check {
     var shopAdress: String?
     var shopName: String?
     var purchaseCategory: String?
     var comment: String?
-    var purchaseVCData: [PurchaseVCData]?
+    var items: [Item] = []
     
-    //    init(shopAdress: String?, shopName: String?, purchaseCategory: String?, comment: String?, purchaseVCData: [PurchaseVCData]?) {
-    //        self.shopAdress = shopAdress
-    //        self.shopName = shopName
-    //        self.purchaseCategory = purchaseCategory
-    //        self.comment = comment
-    //        self.purchaseVCData = purchaseVCData
-    //    }
-    //
-    
-    struct PurchaseVCData {
+    struct Item {
         var purchaseCost: Double?
         var purchaseName: String?
         var purchaseCount: Int?
         var purchaseTotal: Double?
-        
-        //    init(purchaseCost: Double?, purchaseName: String?, purchaseCount: Int?, purchaseTotal: Double?) {
-        //        self.purchaseCost = purchaseCost
-        //        self.purchaseName = purchaseName
-        //        self.purchaseCount = purchaseCount
-        //        self.purchaseTotal = purchaseTotal
-        //    }
     }
-    
 }
