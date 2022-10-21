@@ -15,7 +15,7 @@ struct Check {
     var items: [Item] = []
     
     struct Item {
-        var purchaseCost: Double?
+        var purchasePrice: Double?
         var purchaseName: String?
         var purchaseCount: Int?
         var purchaseTotal: Double?

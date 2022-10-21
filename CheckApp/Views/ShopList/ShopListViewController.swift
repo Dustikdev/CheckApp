@@ -12,14 +12,13 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var shopListTableView: UITableView!
     
     let shops: [String] = ["Пятерочка", "Лента", "Самбери", "Ашан", "У Вазгена"]
-    //    var userDataFromCheck = UserData(purchaseCategory: "Meat", purchaseCost: "3422rsd", shopName: "Maxi", comment: "no comment")
-    let sdsdsd = Check()
-    
+
     private let repository = RachunRepository()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
-        convertDataFromURL()
+        //        getDataFromURL()
+//        convertDataFromURL()
         //        title = "List of shops"
         //        self.navigationController?.navigationBar.prefersLargeTitles = true
         let cellNib = UINib(nibName: String(describing: ShopListTableViewCell.self), bundle: nil)
@@ -40,7 +39,6 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             }
         )
-        //        getDataFromURL()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -105,80 +103,8 @@ extension ShopListViewController {
         }
         task.resume()
     }
-    
-    //полученную хтмлку суем в массив, разбиваем его на строки
-    func convertDataFromURL() {
-        let fullName = mockData
-        let dirtyList = fullName.split(separator: "\n").map { String($0).trimmingCharacters(in: .whitespacesAndNewlines) }
-        //        print(dirtyList)
-        let cleanupList = cleanupData(list: dirtyList)
-//        print(cleanupList)
-        let numberOfPurchase = getNumberOfPurchase(list: cleanupList)
-        let splittedCostData = splitCostData(list: cleanupList, index: numberOfPurchase)
-        fillingPurchaseData(cleanupList: cleanupList, splittedCostData: splittedCostData, numberOfPurchase: numberOfPurchase)
-        //        print(cleanupList)
-        //        print(numberOfPurchase)
-        //        print(splittedCostData)
-    }
-    
-    //забираем из массива нужные строки
-    func cleanupData(list: [String]) -> [String] {
-        let firstIndex = list.firstIndex(where: { $0.contains("panel-collapse collapse")})
-        let lastIndex = list.lastIndex(where: { $0.contains("Готовина")})
-        let cleanData = Array(list[firstIndex!...lastIndex!])
-        return cleanData
-    }
-    
-    //считаем количество позиций в чеке
-    func getNumberOfPurchase(list: [String]) -> Int {
-        let firstIndex = list.firstIndex(where: { $0.contains("Назив")})
-        let lastIndex = list.lastIndex(where: { $0.contains("----------------------------------------")})
-        return Int((lastIndex! - firstIndex!)/2)
-    }
-    
-    //делим строку после названия на цену, количество, сумму и засовываем в массив
-    func splitCostData(list: [String], index: Int) -> [String] {
-        var i = 0
-        var splittedData = [String]()
-        while i < (index * 2) {
-            let splittedValues = list[(15 + i)].split(separator: " ").map { String($0) }
-            splittedData.append(contentsOf: splittedValues)
-            i += 2
-            //            print(splittedData)
-        }
-        return splittedData
-    }
-    
-    func fillingPurchaseData(cleanupList: [String],splittedCostData: [String], numberOfPurchase: Int) {
-        var purchaseData = Check(shopAdress: nil, shopName: nil, purchaseCategory: nil, comment: nil, purchaseVCData: nil)
-        purchaseData.shopAdress = cleanupList[6]
-        purchaseData.shopName = cleanupList[5]
-        purchaseData.purchaseCategory = "no category"
-        purchaseData.comment = "no comment"
-        purchaseData.purchaseVCData?[0].purchaseName = cleanupList[14]
-        print(purchaseData.purchaseVCData?[0].purchaseName)
-        var i = 0
-        var j = 0
-        while i < numberOfPurchase {
-            purchaseData.purchaseVCData?[i].purchaseName = cleanupList[14+j]
-            purchaseData.purchaseVCData?[i].purchaseCost = Double(splittedCostData[i])
-            purchaseData.purchaseVCData?[i].purchaseCount = Int(splittedCostData[i+1])
-            purchaseData.purchaseVCData?[i].purchaseTotal = Double(splittedCostData[i+2])
-//            print(purchaseData.purchaseVCData?[i].purchaseName)
-//            print(purchaseData.purchaseVCData?[i].purchaseCost)
-//            print(purchaseData.purchaseVCData?[i].purchaseCount)
-//            print(purchaseData.purchaseVCData?[i].purchaseTotal)
-            i += 3
-            j += 2
-        }
-//        purchaseData.purchaseVCData
-    }
 }
 
-//var purchaseCost: Double?
-//var purchaseName: String?
-//var purchaseCount: Int?
-//var purchaseTotal: Double?
 
 
 

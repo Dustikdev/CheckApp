@@ -11,7 +11,6 @@ final class RawTextToCheckConverter {
     
     func convertToCheck(rawText: String?) -> Check? {
         let cleanupList = cleanupData(list: rawText!)
-        //        print(cleanupList)
         let check = convertToItem(strings: cleanupList)
         return check
     }
@@ -28,18 +27,25 @@ final class RawTextToCheckConverter {
     func convertToItem(strings: [String]) -> Check {
         var check = Check()
         var i = 15
-        while i < strings.count {
+        let j = 0
+        while i < strings.count - 3 {
             var item = Check.Item()
-            let splittedValues = strings[(15 + i)].split(separator: " ").map { String($0) }
-//            splittedData.append(contentsOf: splittedValues)
-            let count = splittedValues[0]
-            let price = splittedValues[1]
-            item.purchaseCount = count
+            let splittedValues = strings[i].split(separator: " ").map { String($0) }
+//            print(splittedValues)
+            let price = splittedValues[j]
+            let name = strings[i-1]
+            let count = splittedValues[j+1]
+            let totalPrice = splittedValues[j+2]
+            item.purchasePrice = Double(price)
+            print(count)
+            item.purchaseName = name
+            item.purchaseCount = Int(count)
+            item.purchaseTotal = Double(totalPrice)
             check.items.append(item)
             i += 2
-            //            print(splittedData)
+            //нил потому что запятая при переводе в дабл, найти как переделать
         }
-        
+        print(check)
         return check
     }
     

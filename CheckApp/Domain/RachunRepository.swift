@@ -12,12 +12,13 @@ final class RachunRepository {
     let networkManager = NetworkManager()
     let converter = RawTextToCheckConverter()
     
+    
     func getRachuns(url: String, completion: @escaping(Result<Check, Error>) -> Void) {
         networkManager.fetchData(url: url) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success(rawText):
-                guard let shopVcData = self.converter.convert(rawText: rawText) else {
+                guard let shopVcData = self.converter.convertToCheck(rawText: rawText) else {
                     completion(.failure(NSError()))
                     return
                 }
