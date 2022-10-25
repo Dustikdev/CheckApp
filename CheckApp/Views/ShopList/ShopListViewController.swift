@@ -10,28 +10,22 @@ import UIKit
 class ShopListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var shopListTableView: UITableView!
-    
-    let shops: [String] = ["Пятерочка", "Лента", "Самбери", "Ашан", "У Вазгена"]
 
     private let repository = RachunRepository()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
-        //        getDataFromURL()
-//        convertDataFromURL()
-        //        title = "List of shops"
-        //        self.navigationController?.navigationBar.prefersLargeTitles = true
         let cellNib = UINib(nibName: String(describing: ShopListTableViewCell.self), bundle: nil)
         shopListTableView.register(cellNib, forCellReuseIdentifier: "ShopCell")
         shopListTableView.delegate = self
         shopListTableView.dataSource = self
         repository.getRachuns(
-            url: "mock",
+            url: mockData,
             completion: { result in
                 switch result {
-                    
-                case let .success(shopVCData):
-//                    self.shop = shopVCData
+                case let .success(checkData):
+                    print(checkData)
+//                    self.shop = checkData
 //                    tableView.reloadData()
                     break
                 case let .failure(error):
@@ -42,7 +36,8 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.shops.count
+//        return self.shops.count
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
