@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ShopListTableViewCell: UITableViewCell {
+class CheckCell: UITableViewCell {
 
     @IBOutlet weak var purchaseCategoryLabel: UILabel!
-    @IBOutlet weak var shopNameLabel: UILabel!
+    @IBOutlet weak var checkNameLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     

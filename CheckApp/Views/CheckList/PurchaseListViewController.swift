@@ -7,17 +7,18 @@
 
 import UIKit
 
-class CheckListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PurchaseListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var checkListTableView: UITableView!
     
-    let purchase: [String] = ["Apple", "Meat", "Cheese", "Cucumber", "Big black dildo"]
+//    let purchase: [String] = ["Apple", "Meat", "Cheese", "Cucumber", "Big black dildo"]
+    var check = Check()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let cellNib = UINib(nibName: String(describing: CheckListTableViewCell.self), bundle: nil)
-        checkListTableView.register(cellNib, forCellReuseIdentifier: "CheckListCell")
+        let cellNib = UINib(nibName: String(describing: PurchaseCell.self), bundle: nil)
+        checkListTableView.register(cellNib, forCellReuseIdentifier: "PurchaseCell")
         
         checkListTableView.delegate = self
         checkListTableView.dataSource = self
@@ -27,13 +28,15 @@ class CheckListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.purchase.count
+//        return self.purchase.count
+        return 3
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListCell") as! CheckListTableViewCell
-        cell.checkListCell.text = purchase[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PurchaseCell") as! PurchaseCell
+        cell.purchaseLabel.text = check.items[indexPath.row].purchaseName
+//        cell.purchaseLabel.text = purchase[indexPath.row]
         return cell
         
     }

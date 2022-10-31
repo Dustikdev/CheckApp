@@ -7,9 +7,9 @@
 
 import UIKit
 
-class CheckListTableViewCell: UITableViewCell {
+class PurchaseCell: UITableViewCell {
 
-    @IBOutlet weak var checkListCell: UILabel!
+    @IBOutlet weak var purchaseLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

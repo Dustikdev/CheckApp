@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		794BBF8E28F70FD10048FA0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBF8D28F70FD10048FA0B /* AppDelegate.swift */; };
-		794BBF9228F70FD10048FA0B /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBF9128F70FD10048FA0B /* ShopListViewController.swift */; };
+		794BBF9228F70FD10048FA0B /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBF9128F70FD10048FA0B /* CheckListViewController.swift */; };
 		794BBF9728F70FD20048FA0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 794BBF9628F70FD20048FA0B /* Assets.xcassets */; };
 		794BBF9A28F70FD20048FA0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BBF9828F70FD20048FA0B /* LaunchScreen.storyboard */; };
 		794BBFA228F711670048FA0B /* ShopList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFA128F711670048FA0B /* ShopList.storyboard */; };
-		794BBFA528F85EB00048FA0B /* ShopListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFA328F85EB00048FA0B /* ShopListTableViewCell.swift */; };
-		794BBFA628F85EB00048FA0B /* ShopListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFA428F85EB00048FA0B /* ShopListTableViewCell.xib */; };
-		794BBFA828F95FB00048FA0B /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFA728F95FB00048FA0B /* CheckListViewController.swift */; };
-		794BBFAD28F960310048FA0B /* CheckList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFAC28F960310048FA0B /* CheckList.storyboard */; };
-		794BBFB028F961EB0048FA0B /* CheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFAE28F961EB0048FA0B /* CheckListTableViewCell.swift */; };
-		794BBFB128F961EB0048FA0B /* CheckListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFAF28F961EB0048FA0B /* CheckListTableViewCell.xib */; };
+		794BBFA528F85EB00048FA0B /* CheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFA328F85EB00048FA0B /* CheckCell.swift */; };
+		794BBFA628F85EB00048FA0B /* CheckCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFA428F85EB00048FA0B /* CheckCell.xib */; };
+		794BBFA828F95FB00048FA0B /* PurchaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFA728F95FB00048FA0B /* PurchaseListViewController.swift */; };
+		794BBFAD28F960310048FA0B /* PurchaseList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFAC28F960310048FA0B /* PurchaseList.storyboard */; };
+		794BBFB028F961EB0048FA0B /* PurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFAE28F961EB0048FA0B /* PurchaseCell.swift */; };
+		794BBFB128F961EB0048FA0B /* PurchaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFAF28F961EB0048FA0B /* PurchaseCell.xib */; };
 		794BBFB428F9B6D00048FA0B /* InputDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFB328F9B6D00048FA0B /* InputDataViewController.swift */; };
 		794BBFB628F9B6E80048FA0B /* InputData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BBFB528F9B6E80048FA0B /* InputData.storyboard */; };
 		794BBFB928F9BAB40048FA0B /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BBFB828F9BAB40048FA0B /* UserData.swift */; };
@@ -30,17 +30,17 @@
 /* Begin PBXFileReference section */
 		794BBF8A28F70FD10048FA0B /* CheckApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		794BBF8D28F70FD10048FA0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		794BBF9128F70FD10048FA0B /* ShopListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewController.swift; sourceTree = "<group>"; };
+		794BBF9128F70FD10048FA0B /* CheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
 		794BBF9628F70FD20048FA0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		794BBF9928F70FD20048FA0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		794BBF9B28F70FD20048FA0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		794BBFA128F711670048FA0B /* ShopList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShopList.storyboard; sourceTree = "<group>"; };
-		794BBFA328F85EB00048FA0B /* ShopListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListTableViewCell.swift; sourceTree = "<group>"; };
-		794BBFA428F85EB00048FA0B /* ShopListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopListTableViewCell.xib; sourceTree = "<group>"; };
-		794BBFA728F95FB00048FA0B /* CheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
-		794BBFAC28F960310048FA0B /* CheckList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckList.storyboard; sourceTree = "<group>"; };
-		794BBFAE28F961EB0048FA0B /* CheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListTableViewCell.swift; sourceTree = "<group>"; };
-		794BBFAF28F961EB0048FA0B /* CheckListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListTableViewCell.xib; sourceTree = "<group>"; };
+		794BBFA328F85EB00048FA0B /* CheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCell.swift; sourceTree = "<group>"; };
+		794BBFA428F85EB00048FA0B /* CheckCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckCell.xib; sourceTree = "<group>"; };
+		794BBFA728F95FB00048FA0B /* PurchaseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseListViewController.swift; sourceTree = "<group>"; };
+		794BBFAC28F960310048FA0B /* PurchaseList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PurchaseList.storyboard; sourceTree = "<group>"; };
+		794BBFAE28F961EB0048FA0B /* PurchaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCell.swift; sourceTree = "<group>"; };
+		794BBFAF28F961EB0048FA0B /* PurchaseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseCell.xib; sourceTree = "<group>"; };
 		794BBFB328F9B6D00048FA0B /* InputDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDataViewController.swift; sourceTree = "<group>"; };
 		794BBFB528F9B6E80048FA0B /* InputData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputData.storyboard; sourceTree = "<group>"; };
 		794BBFB828F9BAB40048FA0B /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -105,10 +105,10 @@
 		794BBFAA28F95FFD0048FA0B /* ShopList */ = {
 			isa = PBXGroup;
 			children = (
-				794BBF9128F70FD10048FA0B /* ShopListViewController.swift */,
+				794BBF9128F70FD10048FA0B /* CheckListViewController.swift */,
 				794BBFA128F711670048FA0B /* ShopList.storyboard */,
-				794BBFA328F85EB00048FA0B /* ShopListTableViewCell.swift */,
-				794BBFA428F85EB00048FA0B /* ShopListTableViewCell.xib */,
+				794BBFA328F85EB00048FA0B /* CheckCell.swift */,
+				794BBFA428F85EB00048FA0B /* CheckCell.xib */,
 			);
 			path = ShopList;
 			sourceTree = "<group>";
@@ -116,10 +116,10 @@
 		794BBFAB28F960070048FA0B /* CheckList */ = {
 			isa = PBXGroup;
 			children = (
-				794BBFA728F95FB00048FA0B /* CheckListViewController.swift */,
-				794BBFAC28F960310048FA0B /* CheckList.storyboard */,
-				794BBFAE28F961EB0048FA0B /* CheckListTableViewCell.swift */,
-				794BBFAF28F961EB0048FA0B /* CheckListTableViewCell.xib */,
+				794BBFA728F95FB00048FA0B /* PurchaseListViewController.swift */,
+				794BBFAC28F960310048FA0B /* PurchaseList.storyboard */,
+				794BBFAE28F961EB0048FA0B /* PurchaseCell.swift */,
+				794BBFAF28F961EB0048FA0B /* PurchaseCell.xib */,
 			);
 			path = CheckList;
 			sourceTree = "<group>";
@@ -218,12 +218,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				794BBF9A28F70FD20048FA0B /* LaunchScreen.storyboard in Resources */,
-				794BBFA628F85EB00048FA0B /* ShopListTableViewCell.xib in Resources */,
+				794BBFA628F85EB00048FA0B /* CheckCell.xib in Resources */,
 				794BBF9728F70FD20048FA0B /* Assets.xcassets in Resources */,
 				794BBFA228F711670048FA0B /* ShopList.storyboard in Resources */,
-				794BBFB128F961EB0048FA0B /* CheckListTableViewCell.xib in Resources */,
+				794BBFB128F961EB0048FA0B /* PurchaseCell.xib in Resources */,
 				794BBFB628F9B6E80048FA0B /* InputData.storyboard in Resources */,
-				794BBFAD28F960310048FA0B /* CheckList.storyboard in Resources */,
+				794BBFAD28F960310048FA0B /* PurchaseList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,12 +236,12 @@
 			files = (
 				794BBFBE2902C2240048FA0B /* NetworkManager.swift in Sources */,
 				794BBFC32902C32B0048FA0B /* RachunRepository.swift in Sources */,
-				794BBFA528F85EB00048FA0B /* ShopListTableViewCell.swift in Sources */,
+				794BBFA528F85EB00048FA0B /* CheckCell.swift in Sources */,
 				794BBFC02902C2B40048FA0B /* RawTextToCheckConverter.swift in Sources */,
-				794BBFB028F961EB0048FA0B /* CheckListTableViewCell.swift in Sources */,
+				794BBFB028F961EB0048FA0B /* PurchaseCell.swift in Sources */,
 				794BBFB928F9BAB40048FA0B /* UserData.swift in Sources */,
-				794BBFA828F95FB00048FA0B /* CheckListViewController.swift in Sources */,
-				794BBF9228F70FD10048FA0B /* ShopListViewController.swift in Sources */,
+				794BBFA828F95FB00048FA0B /* PurchaseListViewController.swift in Sources */,
+				794BBF9228F70FD10048FA0B /* CheckListViewController.swift in Sources */,
 				794BBFBB28FEF0D70048FA0B /* URLData.swift in Sources */,
 				794BBF8E28F70FD10048FA0B /* AppDelegate.swift in Sources */,
 				794BBFB428F9B6D00048FA0B /* InputDataViewController.swift in Sources */,
